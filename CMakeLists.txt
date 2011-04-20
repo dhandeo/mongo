@@ -12,7 +12,3 @@ ADD_LIBRARY(mongoclient STATIC
 	client/mongo_client_lib.cpp
 	)
 
-TARGET_LINK_LIBRARIES(mongo_lib
-	# boost and pcre
-	)
-
