@@ -554,7 +554,7 @@ again:
                 else {
                     SocketException::Type t = SocketException::SEND_ERROR;
 #if defined(_WINDOWS)
-                    if( e == WSAETIMEDOUT ) t = SocketException::SEND_TIMEOUT;
+										if( errno == WSAETIMEDOUT ) t = SocketException::SEND_TIMEOUT;
 #endif
                     log(_logLevel) << "MessagingPort " << context << " send() " << errnoWithDescription() << ' ' << farEnd.toString() << endl;
                     throw SocketException( t );
